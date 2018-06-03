@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.demo.cmnc.fragments.FarmActivity"
+    tools:showIn="@layout/activity_farm">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="一亩田农场位于崇明岛向化镇北港村齐西111号。该农场从2008年至今持续开发和使用自主产权的E-Farm系统对农业生产进行科学有效和持续的管理，2010年上海首发并应用有机蔬菜追溯系统。改造良田1500亩，纯家庭会员客户超过7000个，日配送能力超过2000单，会员总数超过7万个。一亩田蔬菜生产基地距离东滩保护湿地仅10公里左右，是有机蔬菜生长的天堂。从基地建设到生产管理，建立了一亩田标准化生产及SOP管理流程。进行严谨详细的农事生产记录，使每一颗蔬菜种植过程透明化和完全可追溯。强调施用有机肥改善地力，采用生物和机械的方法防治病虫害，减少化学物质对环境的污染。" />
+
+</android.support.v4.widget.NestedScrollView>

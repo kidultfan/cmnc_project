@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="com.zzti.fengyongge:imagepicker-1.2.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/imagepicker-1.2.0.aar/dfac81c406412c48e3939d673e64cf44/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/imagepicker-1.2.0.aar/dfac81c406412c48e3939d673e64cf44/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.zzti.fengyongge/imagepicker/1.2.0/58ece9bdfd55cbfae0ef7c32c934b306d538408e/imagepicker-1.2.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

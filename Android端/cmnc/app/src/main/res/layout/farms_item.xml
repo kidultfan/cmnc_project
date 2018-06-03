@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="3dp"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/farm_image"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center"
+        android:padding="4dp"
+        android:src="@drawable/ymt"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/farm_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginTop="2dp"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:text="1.一亩田农庄"
+        android:gravity="center_horizontal" />
+    <TextView
+        android:id="@+id/farm_grade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginTop="2dp"
+        android:textSize="15sp"
+        android:layout_gravity="center"
+        android:text="⭐⭐⭐⭐⭐"
+        android:gravity="center_horizontal" />
+</LinearLayout>
