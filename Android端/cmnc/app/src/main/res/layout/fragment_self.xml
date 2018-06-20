@@ -1,11 +1,14 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.demo.cmnc.fragments.SelfFragment">
-
+    tools:context="com.demo.cmnc.fragments.main.SelfFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,27 +63,28 @@
             android:stretchMode="columnWidth"
             android:verticalSpacing="10dp"></com.demo.cmnc.widgets.MyGridView>
     </LinearLayout>
-    <ListView
+    <com.demo.cmnc.widgets.MyListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/list"
-        android:background="@color/white"></ListView>
-    <ListView
+        android:background="@color/white"></com.demo.cmnc.widgets.MyListView>
+    <com.demo.cmnc.widgets.MyListView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/list_two"
-        android:background="@color/white"></ListView>
+        android:background="@color/white"></com.demo.cmnc.widgets.MyListView>
 
     <Button
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:textColor="@color/white"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/quit"
         android:visibility="gone"
-        android:background="@color/red"
-        android:text="quit"/>
+        android:background="@drawable/selector_red_corners_button"
+        android:text="退出登录"/>
 </LinearLayout>
+</ScrollView>

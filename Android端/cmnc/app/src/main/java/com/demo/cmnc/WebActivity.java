@@ -14,6 +14,8 @@ WebView webView;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
         webView=findViewById(R.id.web);
+        getSupportActionBar().setTitle("上海农林职业技术学院");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         webView.getSettings().setJavaScriptEnabled(true);
 // 设置可以支持缩放
@@ -46,6 +48,11 @@ WebView webView;
         }
 
         return super.onKeyDown(keyCode, event);
-    }
 
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
+    }
 }

@@ -1,13 +1,17 @@
 package com.demo.cmnc;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -22,14 +26,13 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.demo.cmnc.fragments.CPFragment;
-import com.demo.cmnc.fragments.DetailsActivity;
-import com.demo.cmnc.fragments.LikeFragment;
-import com.demo.cmnc.fragments.MainFragment;
-import com.demo.cmnc.fragments.ProductsActivity;
-import com.demo.cmnc.fragments.SelfFragment;
+import com.demo.cmnc.activities.one.ProductsActivity;
+import com.demo.cmnc.fragments.like.farm_like;
+import com.demo.cmnc.fragments.like.product_like;
+import com.demo.cmnc.fragments.main.LikeFragment;
+import com.demo.cmnc.fragments.main.MainFragment;
+import com.demo.cmnc.fragments.main.SelfFragment;
 import com.demo.cmnc.tools.JsonParser;
-import com.huaban.analysis.jieba.JiebaSegmenter;
 import com.iflytek.cloud.ErrorCode;
 import com.iflytek.cloud.InitListener;
 import com.iflytek.cloud.RecognizerListener;
@@ -47,9 +50,10 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements MainFragment.OnFragmentInteractionListener, LikeFragment.OnFragmentInteractionListener, SelfFragment.OnFragmentInteractionListener, CPFragment.OnFragmentInteractionListener, NCFragment.OnFragmentInteractionListener {
+import static android.os.Build.VERSION;
+
+public class MainActivity extends AppCompatActivity implements MainFragment.OnFragmentInteractionListener, LikeFragment.OnFragmentInteractionListener, SelfFragment.OnFragmentInteractionListener, product_like.OnFragmentInteractionListener, farm_like.OnFragmentInteractionListener {
 
     private GridView gridView;
     private MainFragment mainFragment;
@@ -57,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
     private SelfFragment selfFragment;
     RequestQueue mQueue;
     private Toast mToast;
+    JSONArray jieba;
 
 
     private FragmentTransaction transaction;
@@ -188,30 +193,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
             public boolean onQueryTextSubmit(final String query) {
                 Log.i("search", query);
 
-
-                StringRequest stringRequest = new StringRequest("http://" + getString(R.string.ip) + "/getproduct?title=" + query + "",
-                        new Response.Listener<String>() {
-                            @Override
-                            public void onResponse(String response) {
-                                if (response.equals("nothing")) {
-                                    checkquery(query);
-
-                                } else {
-
-                                    startActivity(new Intent(MainActivity.this, DetailsActivity.class).putExtra("title", query));
-
-
-                                }
-
-
-                            }
-                        }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Log.e("TAG", error.getMessage(), error);
-                    }
-                });
-                mQueue.add(stringRequest);
+               checkquery(query);
 
                 return false;
             }
@@ -234,7 +216,7 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
                 break;
             case R.id.action_voice:
 //                setParam();
-
+                CheckPermission();
                 // 显示听写对话框
                 mIatDialog.setListener(mRecognizerDialogListener);
                 mIatDialog.show();
@@ -264,36 +246,31 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
         ft.commit();
     }
 
-    private void checkquery(String query) {
-        Log.i("jieba", "123");
+    private void checkquery( final String query) {
 
-        JiebaSegmenter segmenter = new JiebaSegmenter();
-
-        final List<String> stringlist = segmenter.sentenceProcess(query);
-        Log.i("jieba", stringlist.toString());
-        StringRequest stringRequest = new StringRequest("http://" + getString(R.string.ip) + "/keywords",
+        StringRequest stringRequest = new StringRequest("http://" + getString(R.string.ip) + "/products/like/" + query + "",
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        JSONArray jsonArray = null;
-                        try {
-                            jsonArray = new JSONObject(response).getJSONArray("data");
-                            for (int i = 0; i <= jsonArray.length(); i++) {
-                                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                                String key = jsonObject.getString("key");
+                        Log.i("ger",response);
+                        if (!response.equals("no")){
+                            try {
+                                if (new JSONObject(response).getJSONArray("data").length()>0)
+
+                                {
+
+startActivity(new Intent(MainActivity.this,ProductsActivity.class).putExtra("like",query));
+                                }else {
 
 
-                                if (stringlist.contains(key)) {
-                                    Intent intent = new Intent(MainActivity.this, ProductsActivity.class);
-                                    intent.putExtra("tag", jsonObject.getString("tag"));
-                                    startActivity(intent);
-
-
+         checkjieba(query);
                                 }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
                             }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
+
                         }
+
 
 
                     }
@@ -303,10 +280,107 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
                 Log.e("TAG", error.getMessage(), error);
             }
         });
-   mQueue.add(stringRequest);
+        mQueue.add(stringRequest);
 
     }
+public void  checkjieba(String query)
+{
 
+    StringRequest getjieba = new StringRequest("http://" + getString(R.string.ip) + "/getjieba?input="+query,
+            new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+
+                    try {
+                        jieba =new JSONArray(response);
+                        Log.i("jieba",response);
+                        StringRequest stringRequest = new StringRequest("http://" + getString(R.string.ip) + "/keywords",
+                                new Response.Listener<String>() {
+                                    @Override
+                                    public void onResponse(String response) {
+                                        Log.i("have","123");
+
+                                        JSONArray jsonArray = null;
+                                        try {
+                                            boolean have=false;
+                                            jsonArray = new JSONObject(response).getJSONArray("data");
+                                            for (int i = 0; i <jsonArray.length(); i++) {
+                                                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                                                String key = jsonObject.getString("keyword");
+
+
+                                                for (int y=0;y<jieba.length();y++){
+
+                                                    if (jieba.getString(y).equals(key)){
+
+                                                        have=true;
+                                                        Log.i("tag",jsonObject.getString("tag"));
+                                                        Intent intent = new Intent(MainActivity.this, ProductsActivity.class);
+                                                        intent.putExtra("tag", jsonObject.getString("tag"));
+                                                        startActivity(intent);
+
+                                                    }
+
+
+                                                }
+                                                Log.i("have",have+"");
+
+
+
+//                                if (stringlist.contains(key)) {
+//
+//                                    Log.i("tag",jsonObject.getString("tag"));
+//                                    Intent intent = new Intent(MainActivity.this, ProductsActivity.class);
+//                                    intent.putExtra("tag", jsonObject.getString("tag"));
+//                                    startActivity(intent);
+//
+//
+//                                }
+                                            }
+
+                                            if (!have){
+                                                Log.i("have",have+"");
+
+                                                Intent intent = new Intent(MainActivity.this, ProductsActivity.class);
+                                                intent.putExtra("tag", "empty");
+                                                startActivity(intent);
+
+
+                                            }
+                                        } catch (JSONException e) {
+                                            e.printStackTrace();
+                                        }
+
+
+                                    }
+                                }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Log.e("TAG", error.getMessage(), error);
+                            }
+                        });
+                        mQueue.add(stringRequest);
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+
+
+
+                }
+            }, new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            Log.e("TAG", error.getMessage(), error);
+        }
+    });
+
+    mQueue.add(getjieba);
+
+
+
+
+}
     private InitListener mInitListener = new InitListener() {
 
         @Override
@@ -459,5 +533,47 @@ public class MainActivity extends AppCompatActivity implements MainFragment.OnFr
                 selfFragment.update();
                 break;
         }
+
+
+
     }
+
+
+    public void CheckPermission ()   {
+        if (VERSION.SDK_INT>=23)       {
+
+            Log.i("permission","1");
+            int request= ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO);
+            if (request!= PackageManager.PERMISSION_GRANTED)//缺少权限，进行权限申请
+            {
+                Log.i("permission","2");
+
+                ActivityCompat.requestPermissions(this,new String[]{Manifest.permission.RECORD_AUDIO},123);
+                return;//
+            }
+            else
+            {
+                Log.i("permission","3");
+
+                //权限同意，不需要处理,去掉用拍照的方法               Toast.makeText(this,"权限同意",Toast.LENGTH_SHORT).show();
+            }
+        }
+        else{
+            //低于23 不需要特殊处理，去掉用拍照的方法
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 123) {            //当然权限多了，建议使用Switch，不必纠结于此
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "权限申请成功", Toast.LENGTH_SHORT).show();
+            } else if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
+                Toast.makeText(this, "权限申请失败，用户拒绝权限", Toast.LENGTH_SHORT).show();
+            }
+        }
+
+    }
+
 }

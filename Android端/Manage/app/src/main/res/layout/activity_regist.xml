@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.demo.cmnc.RegistActivity">
+    <LinearLayout
+        android:id="@+id/input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+        <EditText
+            android:layout_marginTop="10dp"
+android:id="@+id/edit_id"
+            android:hint="用户名"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edit_name"
+
+            android:hint="农场名"
+            android:layout_marginTop="10dp"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:id="@+id/edit_pwd"
+
+            android:layout_marginTop="10dp"
+            android:hint="密码"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:layout_marginTop="10dp"
+
+            android:id="@+id/edit_pwd2"
+
+            android:hint="确认密码"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/btn_regist"
+
+        android:enabled="false"
+        android:layout_below="@id/input"
+        android:layout_margin="30dp"
+        android:background="@color/lightgray"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:text="注册"/>
+</RelativeLayout>

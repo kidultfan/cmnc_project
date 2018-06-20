@@ -17,6 +17,8 @@ Spinner spinner;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         spinner =  findViewById(R.id.spinner);
+        getSupportActionBar().setTitle("修改信息");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         dataList = new ArrayList<String>();
         dataList.add("男");
         dataList.add("女");
@@ -31,5 +33,10 @@ Spinner spinner;
 
 
 
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
     }
 }

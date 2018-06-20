@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.demo.cmnc.activities.one.FarmActivity">
+    <item
+        android:id="@+id/action_choose"
+        android:orderInCategory="100"
+        android:title="加入推荐"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_key"
+        android:orderInCategory="100"
+        android:title="设置语义"
+        app:showAsAction="never" />
+</menu>

@@ -14,7 +14,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.demo.cmnc.fragments.DetailsActivity;
+import com.demo.cmnc.activities.one.DetailsActivity;
 import com.demo.cmnc.fragments.dummy.Product;
 import com.makeramen.roundedimageview.RoundedImageView;
 
@@ -38,16 +38,18 @@ public class HistoryActivity extends AppCompatActivity {
         sp=getSharedPreferences("User",Context.MODE_PRIVATE);
         String history=sp.getString("history","[]");
         myRecyclerAdapter=new MyRecyclerAdapter(this);
-
+        getSupportActionBar().setTitle("浏览历史");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         try {
             JSONArray jsonArray=new JSONArray(history);
 
             Log.i("test",jsonArray.toString());
-            for (int i=0;i<jsonArray.length();i++){
+            for (int i=jsonArray.length()-1;i>0;i--){
                 JSONObject jsonObject=jsonArray.getJSONObject(i);
                 Log.i("test",jsonObject.toString());
 
                 Product product=new Product();
+                product.setId(jsonObject.getString("id"));
                 product.setTitle(jsonObject.getString("title"));
                 product.setFrom(jsonObject.getString("farm"));
                 product.setPrice(jsonObject.getString("price"));
@@ -128,7 +130,7 @@ public class HistoryActivity extends AppCompatActivity {
             holder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(HistoryActivity.this, DetailsActivity.class).putExtra("from", product.getFrom()).putExtra("title", product.getTitle()));
+                    startActivity(new Intent(HistoryActivity.this, DetailsActivity.class).putExtra("from", product.getFrom()).putExtra("id", product.getId()));
                 }
             });
 
@@ -160,5 +162,10 @@ public class HistoryActivity extends AppCompatActivity {
             }
 
         }
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
     }
     }

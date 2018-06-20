@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.demo.manage.farm.BannerActivity">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+android:padding="15dp"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+        android:text="banner1"/>
+<EditText
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    android:id="@+id/text1"
+    android:hint="农场名"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:textSize="18sp"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:text="图片"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/image1"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/image"/>
+
+    </RelativeLayout>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/post1"
+        android:text="提交"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+
+        android:text="banner2"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text2"
+
+        android:hint="农场名"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:textSize="18sp"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:text="图片"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/image2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/image"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/post2"
+
+        android:text="提交"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+
+        android:text="banner3" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text3"
+
+        android:hint="农场名"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:textSize="18sp"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:text="图片"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/image3"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/image"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/post3"
+
+        android:text="提交"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="15sp"
+
+        android:text="banner4"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/text4"
+
+        android:hint="农场名"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:textSize="18sp"
+            android:layout_marginLeft="5dp"
+            android:layout_centerVertical="true"
+            android:text="图片"/>
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/image4"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/image"/>
+
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/post4"
+
+        android:text="提交"/>
+</LinearLayout>
+</ScrollView>

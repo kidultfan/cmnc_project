@@ -1,6 +1,8 @@
 package com.demo.cmnc;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
@@ -22,18 +24,40 @@ import com.android.volley.toolbox.Volley;
 
 public class JudgeActivity extends AppCompatActivity {
 RatingBar bar1,bar2,bar3,bar4;
-String grade1="0.0",grade2="0.0",grade3="0.0",grade4="0.0",word="0.0";
+String grade1="0.0",grade2="0.0",grade3="0.0",grade4="0.0",word;
 Button post;
 EditText judgeword;
     RequestQueue mQueue;
     LinearLayout hint;
     TextView number;
+     String type;
+     String productname,farmname,productid;
+    String userid;
+    SharedPreferences sp;
+   EditText price;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        final String type=getIntent().getStringExtra("type");
-
+    type=getIntent().getStringExtra("type");
         setContentView(R.layout.activity_judge);
+
+        sp = getSharedPreferences("User", Context.MODE_PRIVATE);
+        userid=sp.getString("userid","");
+
+        if (type.equals("product")){
+        productname=getIntent().getStringExtra("productname");
+            productid=getIntent().getStringExtra("productid");
+            LinearLayout priceview=  (LinearLayout)findViewById(R.id.price_view);
+            priceview.setVisibility(View.GONE);
+
+    }
+else {
+        farmname=getIntent().getStringExtra("farmname");
+          LinearLayout priceview=  (LinearLayout)findViewById(R.id.price_view);
+            priceview.setVisibility(View.VISIBLE);
+        price=findViewById(R.id.price);
+
+    }
         getSupportActionBar().setTitle("添加评价");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
          mQueue = Volley.newRequestQueue(this);
@@ -83,30 +107,46 @@ else {
          post.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-                 Log.i("ip",getString(R.string.ip));
-                 StringRequest stringRequest = new StringRequest("http://"+getString(R.string.ip)+"/addjudges?userid=test&productid=test&grade1="+grade1+"&grade2="+grade2+"&grade3="+grade3+"&grade4="+grade4+"&word="+word+"&type="+type,
-                         new Response.Listener<String>() {
-                             @Override
-                             public void onResponse(String response) {
 
-                                 Log.d("TAG", response);
-                                 if (response.equals("success!"))
-                                 {
+                     String url;
+                     if (type.equals("product")){
+                         url="http://"+getString(R.string.ip)+"/addjudges?userid="+userid+"&productname="+productname+"&productid="+productid+"&grade1="+grade1+"&grade2="+grade2+"&grade3="+grade3+"&grade4="+grade4+"&word="+word+"&type="+type;
 
-                                     Toast.makeText(JudgeActivity.this,"评价成功！",Toast.LENGTH_SHORT).show();
-                                     JudgeActivity.this.finish();
+                     }
+                     else {
+
+
+                         url="http://"+getString(R.string.ip)+"/addjudges?userid="+userid+"&farmname="+farmname+"&grade1="+grade1+"&grade2="+grade2+"&grade3="+grade3+"&grade4="+grade4+"&word="+word+"&type="+type+"&price="+price.getText().toString();
+
+                     }
+
+                     Log.i("url",url);
+
+                     StringRequest stringRequest = new StringRequest(url,
+                             new Response.Listener<String>() {
+                                 @Override
+                                 public void onResponse(String response) {
+
+                                     Log.d("TAG", response);
+                                     if (response.equals("success!"))
+                                     {
+
+                                         Toast.makeText(JudgeActivity.this,"评价成功！",Toast.LENGTH_SHORT).show();
+                                         JudgeActivity.this.finish();
+
+                                     }
 
                                  }
+                             }, new Response.ErrorListener() {
+                         @Override
+                         public void onErrorResponse(VolleyError error) {
+                             Log.e("TAG", error.getMessage(), error);
+                         }
+                     });
+                     mQueue.add(stringRequest);
 
-                             }
-                         }, new Response.ErrorListener() {
-                     @Override
-                     public void onErrorResponse(VolleyError error) {
-                         Log.e("TAG", error.getMessage(), error);
-                     }
-                 });
-                 mQueue.add(stringRequest);
-             }
+                 }
+
          });
 
 

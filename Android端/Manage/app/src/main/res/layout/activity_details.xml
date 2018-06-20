@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+android:background="@color/whitesmoke"
+    android:layout_width="match_parent"
+    android:id="@+id/activity_details"
+
+    android:layout_height="match_parent">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<LinearLayout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.demo.cmnc.activities.one.DetailsActivity">
+    <!--<android.support.v4.view.ViewPager-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="220dp"-->
+        <!--android:id="@+id/viewpager">-->
+
+    <!--</android.support.v4.view.ViewPager>-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/pt_pic"
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="centerCrop"
+           />
+
+        <TextView
+            android:id="@+id/pt_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="有机白菜"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3">
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:layout_height="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_height="wrap_content"
+                android:text="价格"/>
+
+            <TextView
+                android:id="@+id/pt_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="20"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+
+            android:orientation="vertical"
+
+            android:layout_height="50dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="评价"/>
+
+            <TextView
+                android:id="@+id/pt_grade"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="⭐⭐⭐⭐⭐"
+                android:textColor="@color/red" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+android:layout_height="50dp"
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="人气"/>
+
+            <TextView
+                android:id="@+id/pt_like"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:text="120"
+                android:textColor="@color/red"
+                android:textSize="20sp" />
+    </LinearLayout>
+
+    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:text="介绍"/>
+
+        <TextView
+            android:id="@+id/pt_info"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍介绍" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/from_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+android:textColor="@color/black"
+            android:text="来自"
+
+            />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/pt_farm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="一亩田有机农庄"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_alignParentEnd="true"
+
+                android:scaleType="centerCrop"
+                android:src="@drawable/ymt" />
+        </RelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/pj_rv"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+    </LinearLayout>
+
+
+    </ScrollView>
+
+    </FrameLayout>

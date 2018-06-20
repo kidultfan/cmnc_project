@@ -43,13 +43,6 @@ android:id="@+id/edit_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-<Switch
-    android:layout_gravity="end"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/s"
-    android:text="我是农场主"/>
-
     </LinearLayout>
     <Button
         android:id="@+id/btn_regist"

@@ -49,13 +49,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/debug/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/debug/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/assets" type="java-test-resource" />
@@ -63,6 +56,13 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTestDebug/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/testDebug/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/res" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/assets" type="java-resource" />
@@ -70,13 +70,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/rs" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/shaders" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/res" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/assets" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/aidl" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/res" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/assets" type="java-test-resource" />
@@ -84,11 +77,17 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/res" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/assets" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/aidl" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/rs" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/src/test/shaders" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/assets" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/build-info" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/builds" />
-      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/check-manifest" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental-classes" />
@@ -113,6 +112,7 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 26 Platform (1)" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="__local_aars__:/Users/zhangfan/Desktop/崇明生态农场项目/cmnc_project/Android端/cmnc/app/libs/Sunflower.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-media-compat-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:recyclerview-v7-26.1.0" level="project" />
     <orderEntry type="library" name="android.arch.lifecycle:common:1.0.0@jar" level="project" />
@@ -137,19 +137,20 @@
     <orderEntry type="library" name="com.huaban:jieba-analysis:1.0.2@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="org.hamcrest:hamcrest-integration:1.3@jar" level="project" />
     <orderEntry type="library" name="pub.devrel:easypermissions-0.2.1" level="project" />
+    <orderEntry type="library" name="__local_aars__:/Users/zhangfan/Desktop/崇明生态农场项目/cmnc_project/Android端/cmnc/app/libs/Msc.jar:unspecified@jar" level="project" />
     <orderEntry type="library" scope="TEST" name="net.sf.kxml:kxml2:2.3.0@jar" level="project" />
-    <orderEntry type="library" name="__local_aars__:/Users/zhangfan/Desktop/app/cmnc/app/libs/Sunflower.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:transition-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:design-26.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support:support-annotations:27.1.1@jar" level="project" />
+    <orderEntry type="library" name="com.github.clans:fab-1.6.4" level="project" />
     <orderEntry type="library" name="com.makeramen:roundedimageview-2.3.0" level="project" />
     <orderEntry type="library" scope="TEST" name="junit:junit:4.12@jar" level="project" />
     <orderEntry type="library" name="com.google.zxing:core:3.2.1@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-fragment-26.1.0" level="project" />
     <orderEntry type="library" scope="TEST" name="com.android.support.test.espresso:espresso-core-3.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="javax.inject:javax.inject:1@jar" level="project" />
-    <orderEntry type="library" name="__local_aars__:/Users/zhangfan/Desktop/app/cmnc/app/libs/Msc.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:support-vector-drawable-26.1.0" level="project" />
+    <orderEntry type="library" name="__local_aars__:/Users/zhangfan/Desktop/崇明生态农场项目/cmnc_project/Android端/cmnc/app/libs/BaiduLBS_Android.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.volley:volley-1.0.0" level="project" />
     <orderEntry type="library" name="com.android.support:support-core-utils-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support.constraint:constraint-layout-1.1.0" level="project" />
@@ -159,7 +160,6 @@
     <orderEntry type="library" name="com.github.JayFang1993:DropDownMenu-v0.9" level="project" />
     <orderEntry type="library" name="com.android.support:support-v4-26.1.0" level="project" />
     <orderEntry type="library" name="com.android.support:animated-vector-drawable-26.1.0" level="project" />
-    <orderEntry type="library" name="__local_aars__:/Users/zhangfan/Desktop/app/cmnc/app/libs/BaiduLBS_Android.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="com.android.support:cardview-v7-26.1.0" level="project" />
     <orderEntry type="library" name="org.apache.commons:commons-lang3:3.3.1@jar" level="project" />
     <orderEntry type="library" name="com.github.bumptech.glide:glide:3.7.0@jar" level="project" />

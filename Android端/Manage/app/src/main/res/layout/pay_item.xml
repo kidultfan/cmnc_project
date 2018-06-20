@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="100dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/userid"
+        android:text="userid"/>
+<LinearLayout
+    android:layout_centerHorizontal="true"
+    android:layout_width="wrap_content"
+    android:layout_margin="15dp"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:id="@+id/title"
+        android:text="扫二维码付款"/>
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textSize="15sp"
+    android:id="@+id/time"
+    android:text="2012-1223-22"/>
+
+</LinearLayout>
+
+
+    <TextView
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/black"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:textSize="20sp"
+
+        android:id="@+id/price"
+        android:text="-3.00"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.2sp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/lightgray"/>
+</RelativeLayout>

@@ -39,7 +39,7 @@ Button regist;
         regist.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                StringRequest stringRequest = new StringRequest("http://"+R.string.ip+"/regist/?id="+id.getText().toString()+"&name="+name.getText().toString()+"&pwd="+pwd.getText().toString(),
+                final StringRequest stringRequest = new StringRequest("http://"+getString(R.string.ip)+"/regist?id="+id.getText().toString()+"&name="+name.getText().toString()+"&pwd="+pwd.getText().toString(),
                         new Response.Listener<String>() {
                             @Override
                             public void onResponse(String response) {
@@ -64,6 +64,14 @@ Button regist;
                                        }
                                    }.start();
                                }
+
+                               else if (response.equals("exist!")){
+
+                                   Toast.makeText(RegistActivity.this,"注册失败,id已存在",Toast.LENGTH_SHORT).show();
+
+                               }
+
+
                                else {
                                    Toast.makeText(RegistActivity.this,"注册失败",Toast.LENGTH_SHORT).show();
 
@@ -72,11 +80,12 @@ Button regist;
                         }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
                         Toast.makeText(RegistActivity.this,"注册失败",Toast.LENGTH_SHORT).show();
                         Log.e("TAG", error.getMessage(), error);
                     }
                 });
+                Log.i("regist",stringRequest.getUrl());
+
                 stringRequest.setRetryPolicy(new DefaultRetryPolicy(20 * 1000, 0, 1.0f));
 
                 mQueue.add(stringRequest);
@@ -101,6 +110,14 @@ Button regist;
         if (id.getText().length()>0&&name.getText().length()>0&&pwd.getText().length()>0&&pwd2.getText().length()>0&&pwd.getText().toString().equals(pwd2.getText().toString())){
             regist.setEnabled(true);
             regist.setBackgroundColor(getResources().getColor(R.color.cornflowerblue));
+
+
+        }
+
+        else {
+
+            regist.setEnabled(false);
+            regist.setBackgroundColor(getResources().getColor(R.color.lightgray));
 
 
         }

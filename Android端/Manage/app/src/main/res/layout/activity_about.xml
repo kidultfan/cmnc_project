@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.demo.cmnc.fragments.AboutActivity">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="设计开发一个针对崇明生态农场的手机信息服务平台，解决生态农场缺乏有效的推广平台的问题，解决客户与农场经营者缺少网络沟通渠道的问题。设计一个基于主题本体推理的语义搜索算法，实现其在上述手机信息服务平台“查询搜索”模块中的应用，相对传统关键字搜索方式提高搜索性能。
+研究内容
+项目针对目前缺乏生态农场信息发布和获取渠道的问题，研究崇明生态农场信息服务平台在Android手机系统中的设计开发，并研究设计一个基于主题本体推理的语义搜索算法，实现对崇明生态农场信息的搜索。
+"/>
+</android.support.constraint.ConstraintLayout>

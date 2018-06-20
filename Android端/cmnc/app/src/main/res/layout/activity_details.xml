@@ -4,7 +4,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
 android:background="@color/whitesmoke"
     android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    android:id="@+id/activity_details"
+
+    android:layout_height="match_parent">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -14,7 +16,8 @@ android:background="@color/whitesmoke"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.demo.cmnc.fragments.DetailsActivity">
+    android:paddingBottom="50dp"
+    tools:context="com.demo.cmnc.activities.one.DetailsActivity">
     <!--<android.support.v4.view.ViewPager-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="220dp"-->
@@ -124,7 +127,9 @@ android:layout_height="50dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"
         android:text="介绍"/>
 
         <TextView
@@ -151,9 +156,12 @@ android:layout_height="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+android:textColor="@color/black"
             android:text="来自"
 
-            android:textSize="18sp" />
+            />
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -179,8 +187,38 @@ android:layout_height="50dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ymt" />
         </RelativeLayout>
+
     </LinearLayout>
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textStyle="bold"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:text="评价"
+            />
+
+        <android.support.v7.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:id="@+id/pj_rv"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    </LinearLayout>
+
+
+
 
     </ScrollView>
     <LinearLayout
@@ -231,7 +269,7 @@ android:layout_height="50dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:textSize="20sp"
-
+            android:id="@+id/buy"
             android:layout_marginLeft="30dp"
             android:background="@color/colorAccent"
            android:textColor="@color/white"

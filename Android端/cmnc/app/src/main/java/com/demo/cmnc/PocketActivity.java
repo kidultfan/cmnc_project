@@ -9,5 +9,12 @@ public class PocketActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pocket);
+        getSupportActionBar().setTitle("我的钱包");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
     }
 }

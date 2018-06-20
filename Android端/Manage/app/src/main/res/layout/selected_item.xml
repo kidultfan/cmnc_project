@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:background="@color/lightgray"
+
+    android:paddingBottom="10dp"
+    android:orientation="vertical">
+<LinearLayout
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:padding="10dp"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/se_image"
+        app:riv_corner_radius="5dip"
+        android:src="@drawable/ad_p"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:scaleType="fitCenter" />
+
+    <TextView
+        android:id="@+id/se_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"
+        android:layout_gravity="left"
+        android:text="一亩田农庄"
+        android:gravity="left" />
+</LinearLayout>
+</LinearLayout>

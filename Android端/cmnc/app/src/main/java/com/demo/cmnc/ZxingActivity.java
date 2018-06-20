@@ -17,5 +17,12 @@ ImageView imageView;
 imageView=findViewById(R.id.zxing);
         Bitmap bitmap = ZxingUtils.createBitmap(userid);
         imageView.setImageBitmap(bitmap);
+        getSupportActionBar().setTitle("我的二维码");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
     }
 }

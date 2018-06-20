@@ -26,7 +26,8 @@ public class AdviceActivity extends AppCompatActivity {
         hint=findViewById(R.id.hint);
         number=findViewById(R.id.number);
         post=findViewById(R.id.post);
-
+        getSupportActionBar().setTitle("意见反馈");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         adviceword=findViewById(R.id.adviceword);
         adviceword.addTextChangedListener(new TextWatcher() {
             @Override
@@ -74,6 +75,10 @@ post.setOnClickListener(new View.OnClickListener() {
 });
     }
 
-
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return super.onSupportNavigateUp();
+    }
 
 }

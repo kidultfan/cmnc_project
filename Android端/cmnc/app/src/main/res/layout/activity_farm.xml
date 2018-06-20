@@ -5,6 +5,7 @@
     android:id="@+id/coordinator_Layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
  >
 
     <android.support.design.widget.AppBarLayout
@@ -17,7 +18,7 @@
             android:id="@+id/collapsingToolbarLayout"
             android:layout_width="match_parent"
             android:layout_height="300dp"
-            app:contentScrim="#46a8ba"
+            app:contentScrim="@color/colorPrimaryDark"
             android:background="@drawable/ad_p"
             app:expandedTitleMarginEnd="48dp"
             app:expandedTitleMarginStart="48dp"
@@ -84,8 +85,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@color/red"
+        app:backgroundTint="@color/white"
         app:layout_anchor="@id/app_bar_layout"
         app:layout_anchorGravity="center|end"
-        app:srcCompat="@drawable/ic_action_like" />
+        android:src="@drawable/like" />
 </android.support.design.widget.CoordinatorLayout>

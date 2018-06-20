@@ -29,7 +29,6 @@ public class MapActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        SDKInitializer.initialize(getApplicationContext());
 
         setContentView(R.layout.activity_map);
         mSearch = GeoCoder.newInstance();

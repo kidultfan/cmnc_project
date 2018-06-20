@@ -67,10 +67,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".fragments.ProductsActivity" />
-        <activity android:name=".fragments.DetailsActivity" />
+        <activity android:name=".activities.one.ProductsActivity" />
+        <activity android:name=".activities.one.DetailsActivity" />
         <activity
-            android:name=".fragments.FarmActivity"
+            android:name=".activities.one.FarmActivity"
             android:label="@string/title_activity_farm"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
@@ -79,7 +79,7 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegistActivity" />
-        <activity android:name=".SelectedActivity" />
+        <activity android:name=".activities.one.SelectedActivity" />
         <activity android:name=".JudgeActivity" />
         <activity android:name=".GalleryActivity" />
         <activity android:name=".MapActivity" />
@@ -89,7 +89,12 @@
         <activity android:name=".ZxingActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".fragments.AboutActivity" />
-        <activity android:name=".HistoryActivity"></activity>
+        <activity android:name=".HistoryActivity" />
+        <activity android:name=".MyJudgesActivity" />
+        <activity android:name=".PaylogActivity" />
+        <activity android:name=".PingjiaActivity" />
+        <activity android:name=".UpdateActivity" />
+        <activity android:name=".OtherActivity"></activity>
     </application>
 
 </manifest>
